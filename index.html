@@ -11,7 +11,7 @@
       box-sizing: border-box;
       font-family: 'Arial', sans-serif;
     }
-    
+
     body {
       display: flex;
       justify-content: center;
@@ -92,17 +92,96 @@
     .login-container a:hover {
       text-decoration: underline;
     }
+
+    .show-password {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .login-container .social-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .login-container .social-buttons a {
+      width: 30%;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .login-container .social-buttons a.google {
+      background: #dd4b39;
+    }
+
+    .login-container .social-buttons a.facebook {
+      background: #3b5998;
+    }
+
+    .login-container .social-buttons a.twitter {
+      background: #1da1f2;
+    }
+
+    .login-container .social-buttons a:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
   <div class="login-container">
     <h1>Login</h1>
-    <form action="#">
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <div class="show-password">
+        <label for="showPassword">Show Password</label>
+        <input type="checkbox" id="showPassword" onclick="togglePassword()">
+      </div>
       <button type="submit">Sign In</button>
     </form>
+
     <p>Don't have an account? <a href="#">Sign up</a></p>
+
+    <div class="social-buttons">
+      <a href="#" class="google">Google</a>
+      <a href="#" class="facebook">Facebook</a>
+      <a href="#" class="twitter">Twitter</a>
+    </div>
   </div>
+
+  <script>
+    // Toggle show/hide password
+    function togglePassword() {
+      const passwordField = document.getElementById("password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    }
+
+    // Basic validation
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username.length < 4) {
+        alert("Username must be at least 4 characters long.");
+        event.preventDefault();
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
