@@ -1,51 +1,36 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Simple Speed Typer</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Typing Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Professional Typing Speed Test</h1>
+    <p>Improve your typing skills with dynamic feedback and professional design.</p>
+  </header>
 
-    <!-- link the CSS file here -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="heading">
-        <h2>Speed Typing</h2>
+  <main>
+    <section id="typing-test">
+      <div class="text-container">
+        <p id="display-text">The quick brown fox jumps over the lazy dog.</p>
       </div>
-      <div class="header">
-        <div class="wpm">
-          <div class="header_text">WPM</div>
-          <div class="curr_wpm">100</div>
-        </div>
-
-        <div class="cpm">
-          <div class="header_text">CPM</div>
-          <div class="curr_cpm">100</div>
-        </div>
-        <div class="errors">
-          <div class="header_text">Errors</div>
-          <div class="curr_errors">0</div>
-        </div>
-        <div class="timer">
-          <div class="header_text">Time</div>
-          <div class="curr_time">60s</div>
-        </div>
-        <div class="accuracy">
-          <div class="header_text">% Accuracy</div>
-          <div class="curr_accuracy">100</div>
-        </div>
+      <textarea id="typing-input" placeholder="Start typing here..."></textarea>
+      <div class="result">
+        <p id="wpm">Words per minute: <span>0</span></p>
+        <p id="accuracy">Accuracy: <span>0%</span></p>
+        <p id="time-left">Time left: <span>60s</span></p>
       </div>
+      <button id="restart-btn">Restart</button>
+    </section>
+  </main>
 
-      <div class="quote">Click on the area below to start the game.</div>
-      <textarea
-        class="input_area"
-        placeholder="start typing here..."
-        oninput="processCurrentText()"
-        onfocus="startGame()"
-      >
-      </textarea>
-      <button class="restart_btn" onclick="resetValues()">Restart</button>
-    </div>
+  <footer>
+    <p>&copy; 2024 Typing Test | <a href="#">Improve your skills</a></p>
+  </footer>
 
-    <!-- link the JavaScript file here -->
-    <script src="script.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
 </html>
