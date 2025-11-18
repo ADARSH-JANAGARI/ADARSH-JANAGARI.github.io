@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adarsh — Video Portfolio</title>
+  <meta name="description" content="Adarsh — Video project portfolio. Click a video to play." />
+
+  <style>
+    :root{
+      --bg1:#0f0f3d; --bg2:#1a1a5e; --card: rgba(255,255,255,0.06);
+      --accent:#f8b400; --muted: #cfcfe3; --radius: 12px; --maxw: 1000px;
+    }
+    html,body{
+      height:100%;margin:0;font-family:Inter,Segoe UI,Arial;
+      background:linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#fff;
+    }
+    .container{
+      max-width:var(--maxw);margin:40px auto;padding:24px;
+    }
+    header{
+      display:flex;align-items:center;gap:16px;margin-bottom:18px;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#ff7a3d);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:#0f0f3d;font-size:20px;
+    }
+    h1{font-size:24px;margin:0}
+    p.lead{margin:6px 0 16px;color:var(--muted)}
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:18px;
+    }
+    .card{
+      background:var(--card);padding:14px;border-radius:var(--radius);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+    .card h3{
+      margin:0 0 10px;font-size:18px;color:var(--accent);
+    }
+    .video-wrap{
+      position:relative;padding-top:56.25%;overflow:hidden;
+      border-radius:10px;background:#000;
+    }
+    .video-wrap iframe{
+      position:absolute;left:0;top:0;width:100%;height:100%;border:0;
+    }
+    .meta{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:10px;color:var(--muted);font-size:13px;
+    }
+    .btn{
+      display:inline-block;padding:8px 12px;border-radius:8px;
+      background:rgba(255,255,255,0.08);text-decoration:none;color:#fff;
+    }
+    footer{
+      margin-top:28px;color:var(--muted);font-size:13px;text-align:center;
+    }
+    @media (max-width:420px){h1{font-size:20px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">A</div>
+      <div>
+        <h1>Adarsh — Project Video Portfolio</h1>
+        <p class="lead">Short demos & walkthroughs — click to play. (Hosted with GitHub Pages)</p>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- Video 1 -->
+      <div class="card">
+        <h3>Project 1 — 3-Tier Architecture including Route53 and Load Balancers</h3>
+        <div class="video-wrap">
+          <iframe src="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+        <div class="meta">
+          <span>1–3 min • Demo</span>
+          <a class="btn" href="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" target="_blank" rel="noopener">Open Loom page</a>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="card">
+        <h3>Project 2 — S3 Static Website Hosting with cloudfront, Route53 and Certificate Manager</h3>
+        <div class="video-wrap">
+          <iframe src="https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+        <div class="meta">
+          <span>2–4 min • Walkthrough</span>
+          <a class="btn" href="https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c" target="_blank" rel="noopener">Open Loom page</a>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div>Made by Adarsh</div>
+    </footer>
+  </div>
+</body>
+</html>
