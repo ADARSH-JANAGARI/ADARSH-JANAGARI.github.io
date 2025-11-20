@@ -52,8 +52,8 @@
 
         <div class="actions">
           <a class="btn" href="#projects">View Projects</a>
-          <a id="downloadResumeBtn" class="btn btn-secondary" href="#">Download Resume</a>
-          <a id="contactBtn" class="btn btn-secondary" href="#contact">Contact</a>
+          
+          
         </div>
       </div>
 
@@ -141,16 +141,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="card" style="margin-top:12px">
-        <p class="muted">If you'd like to connect, collaborate or request a demo, use the buttons below or email directly.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-          <a id="emailMe" class="btn">Email Me</a>
-          
-        </div>
-      </div>
-    </section>
+    
 
     <footer>
       © <span id="year"></span> Adarsh Janagari — Portfolio
@@ -163,7 +154,7 @@
     // ====== CONFIG: replace these with your actual links if you want ======
     const VIDEO_3TIER = 'https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a';
     const VIDEO_S3 = 'https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c';
-    const RESUME_PATH = 'https://github.com/ADARSH-JANAGARI/ADARSH-JANAGARI.github.io/blob/main/Adarsh%20new%20resume.pdf'; // local uploaded path — will be transformed to URL when hosted
+    const RESUME_PATH = '/mnt/data/Adarsh new resume.pdf'; // local uploaded path — will be transformed to URL when hosted
     const SITE_URL = 'https://your-deployed-site.example.com'; // if you have a live demo, set it here
     // =====================================================================
 
@@ -173,20 +164,12 @@
 
     // contact buttons open mail client with subject
     const mail = 'adarsh77janagari@gmail.com';
-    document.getElementById('contact3Tier').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=Inquiry%20about%203-Tier%20Architecture`);
-    document.getElementById('contactCI').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=CI%2FCD%20Pipeline%20Demo`);
-    document.getElementById('emailMe').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=Portfolio%20Contact`);
+    
+    
+    
 
     // Download resume button — uses uploaded local path. When you publish on GitHub, replace RESUME_PATH with the raw file URL in your repo or a public hosting URL.
-    const downloadBtn = document.getElementById('downloadResumeBtn');
-    downloadBtn.addEventListener('click', (e)=>{
-      // try to download directly
-      const a = document.createElement('a');
-      a.href = RESUME_PATH;
-      a.download = 'Adarsh_Janagari_Resume.pdf';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+    
     });
 
     // Open demo site (if available)
