@@ -1,109 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Adarsh — Video Portfolio</title>
-  <meta name="description" content="Adarsh — Video project portfolio. Click a video to play." />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adarsh Janagari — Portfolio</title>
   <style>
-    :root{
-      --bg1:#0f0f3d; --bg2:#1a1a5e; --card: rgba(255,255,255,0.06);
-      --accent:#f8b400; --muted: #cfcfe3; --radius: 12px; --maxw: 1000px;
+    /* Simple styles — easy to edit later */
+    body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(#0f1724, #111827, #061126); color: white; }
+    .container { max-width: 1100px; margin: auto; padding: 20px; }
+    .hero { padding: 60px 0; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .title { font-size: 48px; font-weight: 800; }
+    .card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-top: 20px; }
+    .grid { display: grid; gap: 20px; }
+    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); display: grid; }
+    .badge { background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 10px; font-size: 12px; }
+    a.btn { background: #f8b400; padding: 12px 20px; border-radius: 10px; color: black; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 20px; }
+    footer { text-align: center; padding: 40px 0; opacity: 0.85; font-size: 14px; }
+    .muted { opacity: 0.8; font-size: 14px; }
+    .small { font-size: 13px; opacity: 0.85; }
+    @media (max-width: 800px) {
+      .title { font-size: 34px; }
+      .hero { padding: 30px 0; }
     }
-    html,body{
-      height:100%;margin:0;font-family:Inter,Segoe UI,Arial;
-      background:linear-gradient(180deg,var(--bg1),var(--bg2));
-      color:#fff;
-    }
-    .container{
-      max-width:var(--maxw);margin:40px auto;padding:24px;
-    }
-    header{
-      display:flex;align-items:center;gap:16px;margin-bottom:18px;
-    }
-    .logo{
-      width:64px;height:64px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),#ff7a3d);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:700;color:#0f0f3d;font-size:20px;
-    }
-    h1{font-size:24px;margin:0}
-    p.lead{margin:6px 0 16px;color:var(--muted)}
-    .grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:18px;
-    }
-    .card{
-      background:var(--card);padding:14px;border-radius:var(--radius);
-      backdrop-filter: blur(6px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-    .card h3{
-      margin:0 0 10px;font-size:18px;color:var(--accent);
-    }
-    .video-wrap{
-      position:relative;padding-top:56.25%;overflow:hidden;
-      border-radius:10px;background:#000;
-    }
-    .video-wrap iframe{
-      position:absolute;left:0;top:0;width:100%;height:100%;border:0;
-    }
-    .meta{
-      display:flex;justify-content:space-between;align-items:center;
-      margin-top:10px;color:var(--muted);font-size:13px;
-    }
-    .btn{
-      display:inline-block;padding:8px 12px;border-radius:8px;
-      background:rgba(255,255,255,0.08);text-decoration:none;color:#fff;
-    }
-    footer{
-      margin-top:28px;color:var(--muted);font-size:13px;text-align:center;
-    }
-    @media (max-width:420px){h1{font-size:20px}}
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div class="logo">A</div>
-      <div>
-        <h1>Adarsh — Project Video Portfolio</h1>
-        <p class="lead">Short demos & walkthroughs — click to play. (Hosted with GitHub Pages)</p>
-      </div>
-    </header>
 
-    <div class="grid">
-
-      <!-- Video 1 -->
-      <div class="card">
-        <h3>Project 1 — 3-Tier Architecture including Route53 and Load Balancers</h3>
-        <div class="video-wrap">
-          <iframe src="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-        </div>
-        <div class="meta">
-          <span>1–3 min • Demo</span>
-          <a class="btn" href="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" target="_blank" rel="noopener">Open Loom page</a>
-        </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div style="flex:1; min-width:300px;">
+        <div style="color:#f8b400; text-transform:uppercase; font-size:14px;">Hello — I'm</div>
+        <div class="title">Adarsh Janagari</div>
+        <p style="max-width: 500px; line-height: 1.7; margin-top: 15px;">
+          DevOps Engineer with hands-on experience in cloud infrastructure, CI/CD automation, containerization, monitoring, and deployment workflows.
+          Trained at Gradious Technologies with strong problem-solving skills and a passion for scalable cloud-native solutions.
+        </p>
+        <a class="btn" href="#projects">View My Work</a>
       </div>
 
-      <!-- Video 2 -->
-      <div class="card">
-        <h3>Project 2 — S3 Static Website Hosting with cloudfront, Route53 and Certificate Manager</h3>
-        <div class="video-wrap">
-          <iframe src="https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-        </div>
-        <div class="meta">
-          <span>2–4 min • Walkthrough</span>
-          <a class="btn" href="https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c" target="_blank" rel="noopener">Open Loom page</a>
+      <div style="flex:1; min-width:260px;">
+        <div class="card">
+          <h3 style="margin:0; font-size:20px;">DevOps Engineer</h3>
+          <p class="muted" style="margin-top:10px;">AWS • Docker • Kubernetes • Jenkins • Terraform • Monitoring</p>
+
+          <div style="margin-top:20px; font-size:14px;">
+            <div class="small">Email</div>
+            <strong>adarsh77janagari@gmail.com</strong>
+            <div style="margin-top:10px;" class="small">Hyderabad, Telangana, India</div>
+            <div style="margin-top:12px;">
+              <!-- Download resume uses the uploaded local path you provided -->
+              <a class="btn" href="/mnt/data/Adarsh new resume.pdf" download="Adarsh_Janagari_Resume.pdf">Download Resume</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" style="margin-top:60px;">
+      <h2 style="font-size:28px; font-weight:700;">Projects</h2>
+      <div class="grid projects-grid" style="margin-top:20px;">
+
+        <div class="card">
+          <h3>Deploying a 3-Tier Architecture on AWS</h3>
+          <p class="muted" style="font-size:14px;">
+            Designed scalable EC2-based architecture with Load Balancer & Auto Scaling. Hosted a React frontend on Nginx and integrated a MySQL database with secure communication.
+          </p>
+          <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
+            <span class="badge">AWS</span>
+            <span class="badge">EC2</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">Nginx</span>
+            <span class="badge">React</span>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
+            <!-- REPLACE the href below with your actual 3-tier project video URL -->
+            <a class="btn" href="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" target="_blank" rel="noopener">Watch Video</a>
+            <a class="btn" href="mailto:adarsh77janagari@gmail.com?subject=Project%20Enquiry">Contact about this</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>3-Tier CI/CD Pipeline in Jenkins</h3>
+          <p class="muted" style="font-size:14px;">
+            Configured a CI/CD pipeline for ReactJS frontend, NodeJS backend and MySQL DB with SonarQube code-quality checks and continuous deployments via Jenkins.
+          </p>
+          <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
+            <span class="badge">Jenkins</span>
+            <span class="badge">SonarQube</span>
+            <span class="badge">NodeJS</span>
+            <span class="badge">ReactJS</span>
+            <span class="badge">MySQL</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Hosting a Static Website on AWS</h3>
+          <p class="muted" style="font-size:14px;">
+            Deployed a static website using S3 + CloudFront for global distribution, configured SSL/TLS with ACM and managed DNS using Route 53 for secure, fast delivery.
+          </p>
+          <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
+            <span class="badge">S3</span>
+            <span class="badge">CloudFront</span>
+            <span class="badge">Route 53</span>
+            <span class="badge">ACM</span>
+          </div>
+
+          <div style="margin-top:12px;">
+            <!-- REPLACE the href below with your actual S3/static-website video URL -->
+            <a class="btn" href="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" target="_blank" rel="noopener">Watch Video</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" style="margin-top:60px;">
+      <h2 style="font-size:28px; font-weight:700;">Skills</h2>
+
+      <div class="card" style="margin-top:20px; font-size:14px; line-height:1.8;">
+        <strong>Cloud Platforms:</strong> AWS<br>
+        <strong>Containerization & Orchestration:</strong> Docker, Kubernetes<br>
+        <strong>CI/CD:</strong> Jenkins<br>
+        <strong>Infrastructure as Code:</strong> Terraform, CloudFormation<br>
+        <strong>Monitoring & Logging:</strong> Prometheus, Grafana, Loki, CloudWatch, CloudTrail<br>
+        <strong>Servers & Tools:</strong> Nginx, Apache, SonarQube<br>
+        <strong>Configuration Management:</strong> Ansible<br>
+        <strong>Scripting:</strong> Shell<br>
+        <strong>Version Control:</strong> Git<br>
+        <strong>Database:</strong> SQL
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="margin-top:60px;">
+      <h2 style="font-size:28px; font-weight:700;">Contact</h2>
+      <div class="card" style="font-size:14px; line-height:1.8;">
+        <p>If you'd like to connect, collaborate, or discuss anything — drop a message.</p>
+        <strong>Email:</strong> adarsh77janagari@gmail.com<br>
+        <a class="btn" href="mailto:adarsh77janagari@gmail.com">Email Me</a>
+      </div>
+    </section>
 
     <footer>
-      <div>Made by Adarsh</div>
+      © <span id="year"></span> Adarsh Janagari — Portfolio
     </footer>
   </div>
+
+  <script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+  </script>
 </body>
 </html>
