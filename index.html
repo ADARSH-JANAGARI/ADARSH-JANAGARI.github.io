@@ -149,39 +149,29 @@
   </div>
 
   <script>
+    // Set current year
     document.getElementById('year').innerText = new Date().getFullYear();
 
-    // ====== CONFIG: replace these with your actual links if you want ======
+    // Video URLs (already set by you)
     const VIDEO_3TIER = 'https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a';
     const VIDEO_S3 = 'https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c';
-    const RESUME_PATH = '/mnt/data/Adarsh new resume.pdf'; // local uploaded path — will be transformed to URL when hosted
-    const SITE_URL = 'https://your-deployed-site.example.com'; // if you have a live demo, set it here
-    // =====================================================================
 
-    // Make buttons functional
-    document.getElementById('watch3Tier').addEventListener('click', ()=> window.open(VIDEO_3TIER, '_blank'));
-    document.getElementById('watchS3').addEventListener('click', ()=> window.open(VIDEO_S3, '_blank'));
+    // Simple helper to open a URL in a new tab
+    function openUrl(url){
+      if(!url){
+        alert('Video URL not set.');
+        return;
+      }
+      window.open(url, '_blank', 'noopener');
+    }
 
-    // contact buttons open mail client with subject
-    const mail = 'adarsh77janagari@gmail.com';
-    
-    
-    
-
-    // Download resume button — uses uploaded local path. When you publish on GitHub, replace RESUME_PATH with the raw file URL in your repo or a public hosting URL.
-    
+    // Attach listeners after DOM is ready
+    document.addEventListener('DOMContentLoaded', function(){
+      const w3 = document.getElementById('watch3Tier');
+      const wS3 = document.getElementById('watchS3');
+      if(w3) w3.addEventListener('click', ()=> openUrl(VIDEO_3TIER));
+      if(wS3) wS3.addEventListener('click', ()=> openUrl(VIDEO_S3));
     });
-
-    // Open demo site (if available)
-    document.getElementById('visitS3').addEventListener('click', ()=>{
-      if(SITE_URL && SITE_URL !== 'https://your-deployed-site.example.com') window.open(SITE_URL, '_blank'); else alert('Set SITE_URL in the HTML to enable this button.');
-    });
-
-    // View architecture — opens a quick preset message to email
-    document.getElementById('viewCI').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=Request%20for%20CI%2FCD%20Architecture%20details`);
-
-    // If you host the resume in your repo, you can set RESUME_PATH to the public raw URL (example shown). When testing locally on this platform the /mnt/data path will be transformed for download.
-
   </script>
 </body>
 </html>
