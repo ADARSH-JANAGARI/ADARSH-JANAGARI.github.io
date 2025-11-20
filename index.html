@@ -5,143 +5,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adarsh Janagari — Portfolio</title>
   <style>
-    /* Simple styles — easy to edit later */
-    body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(#0f1724, #111827, #061126); color: white; }
-    .container { max-width: 1100px; margin: auto; padding: 20px; }
-    .hero { padding: 60px 0; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
-    .title { font-size: 48px; font-weight: 800; }
-    .card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-top: 20px; }
-    .grid { display: grid; gap: 20px; }
-    .projects-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); display: grid; }
-    .badge { background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 10px; font-size: 12px; }
-    a.btn { background: #f8b400; padding: 12px 20px; border-radius: 10px; color: black; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 20px; }
-    footer { text-align: center; padding: 40px 0; opacity: 0.85; font-size: 14px; }
-    .muted { opacity: 0.8; font-size: 14px; }
-    .small { font-size: 13px; opacity: 0.85; }
-    @media (max-width: 800px) {
-      .title { font-size: 34px; }
-      .hero { padding: 30px 0; }
+    :root{
+      --bg1:#071028; --bg2:#0f1724; --accent:#f8b400; --muted:rgba(255,255,255,0.8);
     }
+    *{box-sizing:border-box}
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,var(--bg1),var(--bg2)); color: #e6eef8; -webkit-font-smoothing:antialiased;}
+    .container { max-width: 1100px; margin: 36px auto; padding: 24px; }
+    .hero { display:flex; gap:28px; flex-wrap:wrap; align-items:center; }
+    .left { flex:1; min-width:300px }
+    .right { width:340px; }
+    .eyebrow{ color:var(--accent); text-transform:uppercase; font-weight:700; letter-spacing:1px; font-size:13px }
+    .title{ font-size:44px; font-weight:800; margin:8px 0; color:#fff }
+    .lead{ color:rgba(230,238,248,0.9); line-height:1.6 }
+    .card{ background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.04); }
+
+    /* buttons */
+    .btn{ display:inline-block; background:var(--accent); color:#081018; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700; box-shadow: 0 6px 18px rgba(248,180,0,0.12); transition:transform .14s ease, box-shadow .14s ease }
+    .btn:hover{ transform:translateY(-3px); box-shadow: 0 10px 28px rgba(2,6,23,0.5) }
+    .btn-secondary{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.06); box-shadow:none }
+    .actions{ margin-top:16px; display:flex; gap:12px; flex-wrap:wrap }
+
+    /* grid */
+    .projects-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:20px }
+    .project{ padding:16px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); transition:transform .18s ease }
+    .project:hover{ transform:translateY(-6px) }
+    .badges{ margin-top:10px; display:flex; gap:8px; flex-wrap:wrap }
+    .badge{ background:rgba(255,255,255,0.04); padding:6px 10px; border-radius:999px; font-size:12px }
+
+    h2{ font-size:22px; margin:0 }
+    .section{ margin-top:42px }
+    .muted{ color:rgba(230,238,248,0.75) }
+    footer{ text-align:center; margin-top:48px; color:rgba(230,238,248,0.6); font-size:13px }
+
+    /* small responsive tweaks */
+    @media(max-width:720px){ .right{ width:100% } .title{ font-size:32px } .hero{ gap:16px }}
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div style="flex:1; min-width:300px;">
-        <div style="color:#f8b400; text-transform:uppercase; font-size:14px;">Hello — I'm</div>
+    <header class="hero">
+      <div class="left">
+        <div class="eyebrow">Hello — I'm</div>
         <div class="title">Adarsh Janagari</div>
-        <p style="max-width: 500px; line-height: 1.7; margin-top: 15px;">
-          DevOps Engineer with hands-on experience in cloud infrastructure, CI/CD automation, containerization, monitoring, and deployment workflows.
-          Trained at Gradious Technologies with strong problem-solving skills and a passion for scalable cloud-native solutions.
-        </p>
-        <a class="btn" href="#projects">View My Work</a>
-      </div>
+        <p class="lead">DevOps Engineer with hands‑on experience in cloud infrastructure, CI/CD automation, containerization, monitoring, and production deployments. Trained at Gradious Technologies with a focus on AWS, Docker, Kubernetes and automation.</p>
 
-      <div style="flex:1; min-width:260px;">
-        <div class="card">
-          <h3 style="margin:0; font-size:20px;">DevOps Engineer</h3>
-          <p class="muted" style="margin-top:10px;">AWS • Docker • Kubernetes • Jenkins • Terraform • Monitoring</p>
-
-          <div style="margin-top:20px; font-size:14px;">
-            <div class="small">Email</div>
-            <strong>adarsh77janagari@gmail.com</strong>
-            <div style="margin-top:10px;" class="small">Hyderabad, Telangana, India</div>
-            <div style="margin-top:12px;">
-              <!-- Download resume uses the uploaded local path you provided -->
-              <a class="btn" href="/mnt/data/Adarsh new resume.pdf" download="Adarsh_Janagari_Resume.pdf">Download Resume</a>
-            </div>
-          </div>
+        <div class="actions">
+          <a class="btn" href="#projects">View Projects</a>
+          <a id="downloadResumeBtn" class="btn btn-secondary" href="#">Download Resume</a>
+          <a id="contactBtn" class="btn btn-secondary" href="#contact">Contact</a>
         </div>
       </div>
-    </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" style="margin-top:60px;">
-      <h2 style="font-size:28px; font-weight:700;">Projects</h2>
-      <div class="grid projects-grid" style="margin-top:20px;">
-
-        <div class="card">
-          <h3>Deploying a 3-Tier Architecture on AWS</h3>
-          <p class="muted" style="font-size:14px;">
-            Designed scalable EC2-based architecture with Load Balancer & Auto Scaling. Hosted a React frontend on Nginx and integrated a MySQL database with secure communication.
-          </p>
-          <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
-            <span class="badge">AWS</span>
-            <span class="badge">EC2</span>
-            <span class="badge">MySQL</span>
-            <span class="badge">Nginx</span>
-            <span class="badge">React</span>
-          </div>
-
-          <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;">
-            <!-- REPLACE the href below with your actual 3-tier project video URL -->
-            <a class="btn" href="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" target="_blank" rel="noopener">Watch Video</a>
-            <a class="btn" href="mailto:adarsh77janagari@gmail.com?subject=Project%20Enquiry">Contact about this</a>
+      <aside class="right card">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#f07a2f);display:flex;align-items:center;justify-content:center;font-weight:800;color:#081018;font-size:22px">AJ</div>
+          <div>
+            <div style="font-weight:700">Adarsh Janagari</div>
+            <div class="muted" style="font-size:13px">DevOps Engineer — Hyderabad, India</div>
           </div>
         </div>
 
-        <div class="card">
-          <h3>3-Tier CI/CD Pipeline in Jenkins</h3>
-          <p class="muted" style="font-size:14px;">
-            Configured a CI/CD pipeline for ReactJS frontend, NodeJS backend and MySQL DB with SonarQube code-quality checks and continuous deployments via Jenkins.
-          </p>
-          <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
-            <span class="badge">Jenkins</span>
-            <span class="badge">SonarQube</span>
-            <span class="badge">NodeJS</span>
-            <span class="badge">ReactJS</span>
-            <span class="badge">MySQL</span>
+        <div style="margin-top:14px;font-size:14px" class="muted">
+          <div><strong>Email:</strong> <a id="emailLink" href="mailto:adarsh77janagari@gmail.com">adarsh77janagari@gmail.com</a></div>
+          
+        </div>
+
+        
+          
+        </div>
+      </aside>
+    </header>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <h2>Selected Projects</h2>
+        <div class="muted">Click "Watch" to open the recorded presentation (opens in a new tab)</div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 3-Tier Architecture -->
+        <div class="project card">
+          <h3 style="margin:0">Deploying a 3‑Tier Architecture on AWS</h3>
+          <p class="muted" style="margin-top:8px">Designed scalable EC2 architecture with Load Balancer & Auto Scaling. Hosted a React frontend on Nginx and integrated a MySQL database with secure communication.</p>
+          <div class="badges">
+            <span class="badge">AWS</span><span class="badge">EC2</span><span class="badge">MySQL</span><span class="badge">Nginx</span><span class="badge">React</span>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a id="watch3Tier" class="btn">Watch Video</a>
+            
           </div>
         </div>
 
-        <div class="card">
-          <h3>Hosting a Static Website on AWS</h3>
-          <p class="muted" style="font-size:14px;">
-            Deployed a static website using S3 + CloudFront for global distribution, configured SSL/TLS with ACM and managed DNS using Route 53 for secure, fast delivery.
-          </p>
-          <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:5px;">
-            <span class="badge">S3</span>
-            <span class="badge">CloudFront</span>
-            <span class="badge">Route 53</span>
-            <span class="badge">ACM</span>
+        <!-- Jenkins CI/CD -->
+        <div class="project card">
+          <h3 style="margin:0">3‑Tier CI/CD Pipeline in Jenkins</h3>
+          <p class="muted" style="margin-top:8px">Automated CI/CD for React frontend, Node backend & MySQL DB. Integrated SonarQube for quality checks and configured deployment jobs in Jenkins.</p>
+          <div class="badges">
+            <span class="badge">Jenkins</span><span class="badge">SonarQube</span><span class="badge">NodeJS</span><span class="badge">ReactJS</span>
           </div>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            
+            
+          </div>
+        </div>
 
-          <div style="margin-top:12px;">
-            <!-- REPLACE the href below with your actual S3/static-website video URL -->
-            <a class="btn" href="https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a" target="_blank" rel="noopener">Watch Video</a>
+        <!-- Static website on S3 -->
+        <div class="project card">
+          <h3 style="margin:0">Hosting a Static Website on AWS</h3>
+          <p class="muted" style="margin-top:8px">Deployed a static site with S3 + CloudFront, configured ACM SSL/TLS and Route 53 DNS for a secure, low‑latency global experience.</p>
+          <div class="badges">
+            <span class="badge">S3</span><span class="badge">CloudFront</span><span class="badge">Route 53</span><span class="badge">ACM</span>
+          </div>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a id="watchS3" class="btn">Watch Video</a>
+            
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" style="margin-top:60px;">
-      <h2 style="font-size:28px; font-weight:700;">Skills</h2>
-
-      <div class="card" style="margin-top:20px; font-size:14px; line-height:1.8;">
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="card" style="margin-top:12px; line-height:1.7">
         <strong>Cloud Platforms:</strong> AWS<br>
         <strong>Containerization & Orchestration:</strong> Docker, Kubernetes<br>
         <strong>CI/CD:</strong> Jenkins<br>
         <strong>Infrastructure as Code:</strong> Terraform, CloudFormation<br>
         <strong>Monitoring & Logging:</strong> Prometheus, Grafana, Loki, CloudWatch, CloudTrail<br>
-        <strong>Servers & Tools:</strong> Nginx, Apache, SonarQube<br>
-        <strong>Configuration Management:</strong> Ansible<br>
-        <strong>Scripting:</strong> Shell<br>
-        <strong>Version Control:</strong> Git<br>
-        <strong>Database:</strong> SQL
-      </div>
+        <strong>Tools:</strong> Nginx, Apache, SonarQube, Ansible, Git<br>
+        <strong>Scripting & DB:</strong> Shell, SQL      </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" style="margin-top:60px;">
-      <h2 style="font-size:28px; font-weight:700;">Contact</h2>
-      <div class="card" style="font-size:14px; line-height:1.8;">
-        <p>If you'd like to connect, collaborate, or discuss anything — drop a message.</p>
-        <strong>Email:</strong> adarsh77janagari@gmail.com<br>
-        <a class="btn" href="mailto:adarsh77janagari@gmail.com">Email Me</a>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card" style="margin-top:12px">
+        <p class="muted">If you'd like to connect, collaborate or request a demo, use the buttons below or email directly.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <a id="emailMe" class="btn">Email Me</a>
+          
+        </div>
       </div>
     </section>
 
@@ -151,7 +158,47 @@
   </div>
 
   <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // ====== CONFIG: replace these with your actual links if you want ======
+    const VIDEO_3TIER = 'https://www.loom.com/share/9fec103a704b4aba8001bf3e8e4d4d45?sid=dc048039-9a6e-4303-a99c-1089190ab45a';
+    const VIDEO_S3 = 'https://www.loom.com/share/6bc69fabd88e4f8bb3e8500b3262539f?sid=640fbe89-cc65-4b0b-8ed1-c7a9e97e0c0c';
+    const RESUME_PATH = 'https://github.com/ADARSH-JANAGARI/ADARSH-JANAGARI.github.io/blob/main/Adarsh%20new%20resume.pdf'; // local uploaded path — will be transformed to URL when hosted
+    const SITE_URL = 'https://your-deployed-site.example.com'; // if you have a live demo, set it here
+    // =====================================================================
+
+    // Make buttons functional
+    document.getElementById('watch3Tier').addEventListener('click', ()=> window.open(VIDEO_3TIER, '_blank'));
+    document.getElementById('watchS3').addEventListener('click', ()=> window.open(VIDEO_S3, '_blank'));
+
+    // contact buttons open mail client with subject
+    const mail = 'adarsh77janagari@gmail.com';
+    document.getElementById('contact3Tier').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=Inquiry%20about%203-Tier%20Architecture`);
+    document.getElementById('contactCI').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=CI%2FCD%20Pipeline%20Demo`);
+    document.getElementById('emailMe').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=Portfolio%20Contact`);
+
+    // Download resume button — uses uploaded local path. When you publish on GitHub, replace RESUME_PATH with the raw file URL in your repo or a public hosting URL.
+    const downloadBtn = document.getElementById('downloadResumeBtn');
+    downloadBtn.addEventListener('click', (e)=>{
+      // try to download directly
+      const a = document.createElement('a');
+      a.href = RESUME_PATH;
+      a.download = 'Adarsh_Janagari_Resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+
+    // Open demo site (if available)
+    document.getElementById('visitS3').addEventListener('click', ()=>{
+      if(SITE_URL && SITE_URL !== 'https://your-deployed-site.example.com') window.open(SITE_URL, '_blank'); else alert('Set SITE_URL in the HTML to enable this button.');
+    });
+
+    // View architecture — opens a quick preset message to email
+    document.getElementById('viewCI').addEventListener('click', ()=> window.location.href = `mailto:${mail}?subject=Request%20for%20CI%2FCD%20Architecture%20details`);
+
+    // If you host the resume in your repo, you can set RESUME_PATH to the public raw URL (example shown). When testing locally on this platform the /mnt/data path will be transformed for download.
+
   </script>
 </body>
 </html>
